@@ -8,18 +8,15 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-public class Vaccine {
+public class VaccineRegistration {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +26,5 @@ public class Vaccine {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY ,mappedBy = "vaccine")
-    private List<User> user;
+    private String emailUser;
 }

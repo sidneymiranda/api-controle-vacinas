@@ -11,8 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor()
@@ -35,11 +34,8 @@ public class User {
     private String cpf;
 
     @Column(nullable = false)
-    private String dob;
+    private LocalDate birthDate;
 
-    @ManyToOne()
-    @JoinColumn(name = "vaccine_id")
-    private Vaccine vaccine;
 }
 
 
