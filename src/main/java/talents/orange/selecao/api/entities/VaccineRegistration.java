@@ -15,7 +15,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Entity
+@Entity(name = "vaccine-registration")
 public class VaccineRegistration {
 
     @Id
