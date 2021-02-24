@@ -2,6 +2,7 @@ package talents.orange.selecao.api.entities;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,11 +12,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import java.time.LocalDate;
 
+@Entity(name = "vaccine_registration")
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Entity(name = "vaccine-registration")
 public class VaccineRegistration {
 
     @Id
@@ -26,5 +30,10 @@ public class VaccineRegistration {
     @Column(nullable = false)
     private String name;
 
-    private String emailUser;
+    @Column(nullable = false)
+    private LocalDate applicationDate;
+
+    @ManyToOne
+    private Person person;
+
 }

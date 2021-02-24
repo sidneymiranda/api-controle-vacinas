@@ -2,6 +2,7 @@ package talents.orange.selecao.api.entities;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,11 +14,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
 
-@NoArgsConstructor
-@AllArgsConstructor()
+@Entity
 @Data
-@Entity(name = "users")
-public class User {
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
